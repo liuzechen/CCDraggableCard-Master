@@ -25,14 +25,16 @@ self.container.dataSource = self;
 ```
 
 #####3.协议
-```
+
 `CCDraggableContainerDataSource`
 
+```
 - (CCDraggableCardView *)draggableContainer:(CCDraggableContainer *)draggableContainer viewForIndex:(NSInteger)index;
 - (NSInteger)numberOfIndexs;
-
+```
 `CCDraggableContainer Delegate`
 
+```
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer draggableDirection:(CCDraggableDirection)draggableDirection widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio;
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer cardView:(CCDraggableCardView *)cardView didSelectIndex:(NSInteger)didSelectIndex;
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer finishedDraggableLastCard:(BOOL)finishedDraggableLastCard;
