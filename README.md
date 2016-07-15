@@ -13,7 +13,7 @@
 ```
 @property (nonatomic, strong) CCDraggableContainer *container;
 
-self.container = [[CCDraggableContainer alloc] initWithFrame:CGRectMake(0, 64, CCWidth, CCWidth) style:CCDraggableStyleUpOverlay];
+self.container = [[CCDraggableContainer alloc] initWithFrame:... style:CCDraggableStyleUpOverlay];
 self.container.delegate = self;
 self.container.dataSource = self;
 [self.view addSubview:self.container];
