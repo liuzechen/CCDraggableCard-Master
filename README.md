@@ -8,6 +8,35 @@
 
 `CCDraggableCard`中主视图`CCDraggableContainer`的使用类似UITableView, 拥有`CCDraggableContainerDelegate`和`CCDraggableContainerDataSource`对CardView进行操作。
 
+> `CCDraggableContainer`初始化
+
+```
+@property (nonatomic, strong) CCDraggableContainer *container;
+
+self.container = [[CCDraggableContainer alloc] initWithFrame:CGRectMake(0, 64, CCWidth, CCWidth) style:CCDraggableStyleUpOverlay];
+self.container.delegate = self;
+self.container.dataSource = self;
+[self.view addSubview:self.container];
+```
+> 刷新数据
+```
+[self.container reloadData];
+```
+> 协议
+
+```
+// CCDraggableContainer DataSource
+
+- (CCDraggableCardView *)draggableContainer:(CCDraggableContainer *)draggableContainer viewForIndex:(NSInteger)index;
+- (NSInteger)numberOfIndexs;
+
+// CCDraggableContainer Delegate
+
+- (void)draggableContainer:(CCDraggableContainer *)draggableContainer draggableDirection:(CCDraggableDirection)draggableDirection widthRatio:(CGFloat)widthRatio heightRatio:(CGFloat)heightRatio;
+- (void)draggableContainer:(CCDraggableContainer *)draggableContainer cardView:(CCDraggableCardView *)cardView didSelectIndex:(NSInteger)didSelectIndex;
+- (void)draggableContainer:(CCDraggableContainer *)draggableContainer finishedDraggableLastCard:(BOOL)finishedDraggableLastCard;
+```
+
 #### 版本及功能
 `v.1.0`
 > CCDraggableContainer通过代码创建
