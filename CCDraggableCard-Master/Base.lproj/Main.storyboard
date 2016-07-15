@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Ib-QX-KJ3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="4c8-CP-UT7">
+            <objects>
+                <navigationController id="8Ib-QX-KJ3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WHs-iJ-pM9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nWb-UP-heq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0g-gW-FqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-846" y="472"/>
+        </scene>
+        <!--CCDraggableCard-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOH-lS-5Ty">
+                                <rect key="frame" x="286" y="442" width="28" height="28"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="Epx-VT-FaS"/>
+                                    <constraint firstAttribute="height" constant="28" id="yB6-UQ-NZZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" image="userInfo.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reloadDataEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GFV-Gm-vYa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB0-ba-443">
+                                <rect key="frame" x="353" y="413" width="85" height="85"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="liked.png"/>
+                                <connections>
+                                    <action selector="likeEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oEV-tK-iQi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivd-0d-Wux">
+                                <rect key="frame" x="162" y="413" width="85" height="85"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ivd-0d-Wux" secondAttribute="height" multiplier="1:1" id="a5J-Bf-9Wt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" image="nope.png"/>
+                                <connections>
+                                    <action selector="dislikeEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6W4-HE-dbF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oB0-ba-443" firstAttribute="bottom" secondItem="ivd-0d-Wux" secondAttribute="bottom" id="Hgs-en-rcG"/>
+                            <constraint firstItem="WOH-lS-5Ty" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hip-LC-UfE"/>
+                            <constraint firstItem="ivd-0d-Wux" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-95.5" id="JYc-Pj-whn"/>
+                            <constraint firstItem="oB0-ba-443" firstAttribute="top" secondItem="ivd-0d-Wux" secondAttribute="top" id="MDM-OO-5dE"/>
+                            <constraint firstItem="WOH-lS-5Ty" firstAttribute="centerY" secondItem="ivd-0d-Wux" secondAttribute="centerY" id="WVt-Fk-EYY"/>
+                            <constraint firstItem="ivd-0d-Wux" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="155.5" id="Xrg-hZ-keN"/>
+                            <constraint firstItem="oB0-ba-443" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="95.5" id="tCc-fO-rwG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="CCDraggableCard" id="zeQ-We-r5k"/>
+                    <connections>
+                        <outlet property="detailBtn" destination="WOH-lS-5Ty" id="3nu-Sy-em6"/>
+                        <outlet property="disLikeButton" destination="ivd-0d-Wux" id="ErJ-xW-vBu"/>
+                        <outlet property="likeButton" destination="oB0-ba-443" id="I0u-z8-ZPa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="294" y="370"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="liked.png" width="85" height="85"/>
+        <image name="nope.png" width="85" height="85"/>
+        <image name="userInfo.png" width="56" height="56"/>
+    </resources>
+</document>
