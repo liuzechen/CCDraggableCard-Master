@@ -2,7 +2,7 @@
 
 ![image](https://github.com/liuzechen/CCDraggableCard-Master/raw/master/screenshot.gif)
 
-`CCDraggableCard`是&lt; 左滑无感 右滑喜欢 >的卡牌视图。
+`CCDraggableCard`是左滑无感|右滑喜欢的卡牌视图。作者会不间断更新，如`CCDraggableCard`有幸被您搜到，请Star予以支持(^__^) ……
 
 #### 使用
 
