@@ -8,7 +8,7 @@
 
 `CCDraggableCard`中主视图`CCDraggableContainer`的使用类似UITableView, 拥有`CCDraggableContainerDelegate`和`CCDraggableContainerDataSource`对CardView进行操作。
 
-> `CCDraggableContainer`初始化
+> 1.`CCDraggableContainer`初始化
 
 ```
 @property (nonatomic, strong) CCDraggableContainer *container;
@@ -18,11 +18,13 @@ self.container.delegate = self;
 self.container.dataSource = self;
 [self.view addSubview:self.container];
 ```
-> 刷新数据
+
+> 2.刷新数据
 ```
 [self.container reloadData];
 ```
-> 协议
+
+> 3.协议
 ```
 `CCDraggableContainerDataSource`
 
