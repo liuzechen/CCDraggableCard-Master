@@ -47,15 +47,16 @@
     self.backgroundColor = [UIColor colorWithRed:0.951 green:0.951 blue:0.951 alpha:1.00];
 }
 
-- (void)cc_layoutSubviews {
-    
+- (void)cc_layoutSubviews  {    
     self.imageView.frame   = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - 64);
     self.titleLabel.frame = CGRectMake(0, self.frame.size.height - 64, self.frame.size.width, 64);
 }
 
 - (void)installData:(NSDictionary *)element {
     self.imageView.image  = [UIImage imageNamed:element[@"image"]];
+    self.imageView.transform = CGAffineTransformIdentity;
     self.titleLabel.text = element[@"title"];
+    self.titleLabel.transform = CGAffineTransformIdentity;
 }
 
 @end

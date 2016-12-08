@@ -11,7 +11,6 @@
 @interface CCDraggableContainer ()
 
 @property (nonatomic) NSInteger loadedIndex;
-@property (nonatomic) BOOL finishedReset;
 @property (nonatomic) BOOL moving; ///< 可以用方向替代, 暂时用着
 
 @property (nonatomic) CGRect firstCardFrame; ///< 初始化时第一个Card的frame
@@ -42,7 +41,6 @@
 
 - (void)defaultConfig {
     self.currentCards = [NSMutableArray array];
-    self.finishedReset = NO;
     self.direction = CCDraggableDirectionDefault;
     self.loadedIndex = 0;
     self.moving = NO;
@@ -70,10 +68,10 @@
         NSInteger indexs = [self.dataSource numberOfIndexs];
         NSInteger preloadViewCont = indexs <= kVisibleCount ? indexs : kVisibleCount;
         
-        //  -------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------
         // 在此需添加当前Card是否移动的状态A
         // 如果A为YES, 则执行当且仅当一次installNextItem, 用条件限制
-        //  -------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------
 
         if (self.loadedIndex < indexs) {
             
@@ -121,7 +119,6 @@
                 UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureHandle:)];
                 [cardView addGestureRecognizer:tap];
                 
-                
                 // 总数indexs, 计算以及加载到了第几个index
                 self.loadedIndex += 1;
                 
@@ -150,8 +147,6 @@
 }
 
 - (void)panGestureHandle:(UIPanGestureRecognizer *)gesture {
-
-    if (!self.finishedReset) { return; }
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
         // Coding...
@@ -297,18 +292,27 @@
     
     __weak CCDraggableContainer *weakself = self;
     
-    [UIView animateWithDuration:0.5
+    [UIView animateWithDuration:.5
                           delay:0.0
          usingSpringWithDamping:0.6
-          initialSpringVelocity:0.0
+          initialSpringVelocity:0.6
                         options:UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          
                          [weakself originalLayout];
                      } completion:^(BOOL finished) {
-                         weakself.finishedReset = YES;
+                         
+                         // 2016-12-08
+                         // 当且仅当动画结束调用，之前错误写在originalLayout方法中，要知道originalLayout方法经常活动在动画里
+                         // ...写在originalLayout里会出现CardView里面的子视图出现动画效果
+                         // 用户移除最后一个CardView除非的方法
+                         
+                         if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(draggableContainer:finishedDraggableLastCard:)]) {
+                             if (weakself.currentCards.count == 0) {
+                                 [weakself.delegate draggableContainer:self finishedDraggableLastCard:YES];
+                             }
+                         }
                      }];
-    
 }
 
 // scale: MAX: kBoundaryRatio
@@ -360,12 +364,6 @@
         [self.delegate draggableContainer:self draggableDirection:self.direction widthRatio:0 heightRatio:0];
     }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(draggableContainer:finishedDraggableLastCard:)]) {
-        if (self.currentCards.count == 0) {
-            [self.delegate draggableContainer:self finishedDraggableLastCard:YES];
-        }
-    }
-    
     for (int i = 0; i < self.currentCards.count; i++) {
         
         CCDraggableCardView *cardView = [self.currentCards objectAtIndex:i];
@@ -396,8 +394,8 @@
 
                 if (CGRectIsEmpty(self.lastCardFrame)) {
                     self.lastCardFrame = frame;
+                    self.lastCardTransform = cardView.transform;
                 }
-                self.lastCardTransform = cardView.transform;
             }
                 break;
             default:

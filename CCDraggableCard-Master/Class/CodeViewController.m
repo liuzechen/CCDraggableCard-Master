@@ -37,7 +37,7 @@ CCDraggableContainerDelegate
     self.container = [[CCDraggableContainer alloc] initWithFrame:CGRectMake(0, 64, CCWidth, CCWidth) style:CCDraggableStyleUpOverlay];
     self.container.delegate = self;
     self.container.dataSource = self;
-    self.container.backgroundColor = [UIColor orangeColor];
+    self.container.backgroundColor = [UIColor colorWithRed:0.792 green:0.918 blue:0.808 alpha:1.00];
     [self.view addSubview:self.container];
     // 重启加载
     [self.container reloadData];

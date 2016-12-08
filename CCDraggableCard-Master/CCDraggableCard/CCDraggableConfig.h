@@ -26,9 +26,9 @@ typedef NS_OPTIONS(NSInteger, CCDraggableStyle) {
 #define CCWidth  [UIScreen mainScreen].bounds.size.width
 #define CCHeight [UIScreen mainScreen].bounds.size.height
 
-static const CGFloat kBoundaryRatio   = 0.5f;
-static const CGFloat kSecondCardScale = 0.98f;
-static const CGFloat kTherdCardScale  = 0.96f;
+static const CGFloat kBoundaryRatio   = 0.8f;
+static const CGFloat kSecondCardScale = 0.95f;
+static const CGFloat kTherdCardScale  = 0.9f;
 //static const CGFloat kFirstCardScale  = 1.08f;
 //static const CGFloat kSecondCardScale = 1.04f;
 
