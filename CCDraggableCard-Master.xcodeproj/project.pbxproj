@@ -21,14 +21,16 @@
 		C539A4E41D30DD41005E0701 /* image_9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C539A4D81D30DD41005E0701 /* image_9.jpg */; };
 		C54763EB1D2CA13100736B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C54763EA1D2CA13100736B09 /* main.m */; };
 		C54763EE1D2CA13100736B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C54763ED1D2CA13100736B09 /* AppDelegate.m */; };
-		C54763F11D2CA13100736B09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C54763F01D2CA13100736B09 /* ViewController.m */; };
 		C54763F41D2CA13100736B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C54763F21D2CA13100736B09 /* Main.storyboard */; };
 		C54763F61D2CA13100736B09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54763F51D2CA13100736B09 /* Assets.xcassets */; };
 		C54763F91D2CA13100736B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C54763F71D2CA13100736B09 /* LaunchScreen.storyboard */; };
 		C54764041D2CA13100736B09 /* CCDraggableCard_MasterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54764031D2CA13100736B09 /* CCDraggableCard_MasterTests.m */; };
 		C547640F1D2CA13100736B09 /* CCDraggableCard_MasterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C547640E1D2CA13100736B09 /* CCDraggableCard_MasterUITests.m */; };
 		C54764251D2CADD500736B09 /* CCDraggableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C54764241D2CADD500736B09 /* CCDraggableContainer.m */; };
-		C559C02F1D30A76F00618B9C /* CustomCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C559C02E1D30A76F00618B9C /* CustomCardView.m */; };
+		C55A227B1DE7DDB500446E06 /* CustomCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A22781DE7DDB500446E06 /* CustomCardView.m */; };
+		C55A227C1DE7DDB500446E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A227A1DE7DDB500446E06 /* ViewController.m */; };
+		C55A227F1DE7DEC800446E06 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A227E1DE7DEC800446E06 /* MainViewController.m */; };
+		C55A22821DE7E11000446E06 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A22811DE7E11000446E06 /* CodeViewController.m */; };
 		C55C9F701D2CDE910014447A /* CCDraggableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55C9F6F1D2CDE910014447A /* CCDraggableCardView.m */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +68,6 @@
 		C54763EA1D2CA13100736B09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C54763EC1D2CA13100736B09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C54763ED1D2CA13100736B09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C54763EF1D2CA13100736B09 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C54763F01D2CA13100736B09 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C54763F31D2CA13100736B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C54763F51D2CA13100736B09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C54763F81D2CA13100736B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,8 +80,14 @@
 		C54764101D2CA13100736B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C54764231D2CADD500736B09 /* CCDraggableContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDraggableContainer.h; sourceTree = "<group>"; };
 		C54764241D2CADD500736B09 /* CCDraggableContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDraggableContainer.m; sourceTree = "<group>"; };
-		C559C02D1D30A76F00618B9C /* CustomCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCardView.h; sourceTree = "<group>"; };
-		C559C02E1D30A76F00618B9C /* CustomCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCardView.m; sourceTree = "<group>"; };
+		C55A22771DE7DDB500446E06 /* CustomCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCardView.h; sourceTree = "<group>"; };
+		C55A22781DE7DDB500446E06 /* CustomCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCardView.m; sourceTree = "<group>"; };
+		C55A22791DE7DDB500446E06 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C55A227A1DE7DDB500446E06 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C55A227D1DE7DEC800446E06 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C55A227E1DE7DEC800446E06 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C55A22801DE7E11000446E06 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
+		C55A22811DE7E11000446E06 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
 		C55C9F6E1D2CDE910014447A /* CCDraggableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDraggableCardView.h; sourceTree = "<group>"; };
 		C55C9F6F1D2CDE910014447A /* CCDraggableCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDraggableCardView.m; sourceTree = "<group>"; };
 		C55C9F721D2CEBF60014447A /* CCDraggableConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDraggableConfig.h; sourceTree = "<group>"; };
@@ -135,14 +141,11 @@
 		C54763E81D2CA13100736B09 /* CCDraggableCard-Master */ = {
 			isa = PBXGroup;
 			children = (
+				C55A22761DE7DDB500446E06 /* Class */,
 				C55C9F571D2CDBA90014447A /* Resources */,
 				C547641C1D2CA18500736B09 /* CCDraggableCard */,
 				C54763EC1D2CA13100736B09 /* AppDelegate.h */,
 				C54763ED1D2CA13100736B09 /* AppDelegate.m */,
-				C54763EF1D2CA13100736B09 /* ViewController.h */,
-				C54763F01D2CA13100736B09 /* ViewController.m */,
-				C559C02D1D30A76F00618B9C /* CustomCardView.h */,
-				C559C02E1D30A76F00618B9C /* CustomCardView.m */,
 				C54763F21D2CA13100736B09 /* Main.storyboard */,
 				C54763F51D2CA13100736B09 /* Assets.xcassets */,
 				C54763F71D2CA13100736B09 /* LaunchScreen.storyboard */,
@@ -188,6 +191,21 @@
 				C55C9F721D2CEBF60014447A /* CCDraggableConfig.h */,
 			);
 			path = CCDraggableCard;
+			sourceTree = "<group>";
+		};
+		C55A22761DE7DDB500446E06 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				C55A22771DE7DDB500446E06 /* CustomCardView.h */,
+				C55A22781DE7DDB500446E06 /* CustomCardView.m */,
+				C55A22791DE7DDB500446E06 /* ViewController.h */,
+				C55A227A1DE7DDB500446E06 /* ViewController.m */,
+				C55A227D1DE7DEC800446E06 /* MainViewController.h */,
+				C55A227E1DE7DEC800446E06 /* MainViewController.m */,
+				C55A22801DE7E11000446E06 /* CodeViewController.h */,
+				C55A22811DE7E11000446E06 /* CodeViewController.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		C55C9F571D2CDBA90014447A /* Resources */ = {
@@ -277,6 +295,7 @@
 					C54763E51D2CA13100736B09 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = X4U9VCM9CZ;
+						ProvisioningStyle = Automatic;
 					};
 					C54763FE1D2CA13100736B09 = {
 						CreatedOnToolsVersion = 7.3;
@@ -352,12 +371,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C54763F11D2CA13100736B09 /* ViewController.m in Sources */,
+				C55A227C1DE7DDB500446E06 /* ViewController.m in Sources */,
+				C55A22821DE7E11000446E06 /* CodeViewController.m in Sources */,
 				C54764251D2CADD500736B09 /* CCDraggableContainer.m in Sources */,
 				C54763EE1D2CA13100736B09 /* AppDelegate.m in Sources */,
 				C54763EB1D2CA13100736B09 /* main.m in Sources */,
+				C55A227F1DE7DEC800446E06 /* MainViewController.m in Sources */,
+				C55A227B1DE7DDB500446E06 /* CustomCardView.m in Sources */,
 				C55C9F701D2CDE910014447A /* CCDraggableCardView.m in Sources */,
-				C559C02F1D30A76F00618B9C /* CustomCardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,13 +521,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zechen Liu (2LVLL9BWF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X4U9VCM9CZ;
 				INFOPLIST_FILE = "CCDraggableCard-Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.draggablecard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cdcac052-bd35-4b31-af34-37fc2fb5bf32";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -514,13 +537,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Zechen Liu (2LVLL9BWF4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = X4U9VCM9CZ;
 				INFOPLIST_FILE = "CCDraggableCard-Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.draggablecard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cdcac052-bd35-4b31-af34-37fc2fb5bf32";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
