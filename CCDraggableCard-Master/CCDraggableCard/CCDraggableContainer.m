@@ -215,14 +215,14 @@
     
     if (!disappear) {
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfIndexs)]) {
-            // 2016.12.15 修复第四个视图没有被移除的BUG，错误条件: self.loadedIndex < [indexs] 改为 （self.currentCards.count > kVisibleCount）
+            // 2016.12.15 修复第四个视图没有被移除的BUG
             if (self.moving && self.currentCards.count > kVisibleCount) {
                 UIView *lastView = [self.currentCards lastObject];
                 [lastView removeFromSuperview];
                 [self.currentCards removeObject:lastView];
                 self.loadedIndex = lastView.tag;
             }
-            self.moving = NO;
+            [self setMoving:NO];
             [self resetVisibleCards];
         }
     } else {
@@ -243,7 +243,7 @@
                              [cardView removeFromSuperview];
                          }];
         [self.currentCards removeObject:cardView];
-        self.moving = NO;
+        [self setMoving:NO];
         [self resetVisibleCards];
     }
 }
