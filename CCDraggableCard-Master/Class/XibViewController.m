@@ -6,17 +6,18 @@
 //  Copyright © 2016年 Zechen Liu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "XibViewController.h"
 #import "CCDraggableContainer.h"
 #import "CustomCardView.h"
 
-@interface ViewController ()
+@interface XibViewController ()
 <
 CCDraggableContainerDataSource,
 CCDraggableContainerDelegate
 >
 
-@property (nonatomic, strong) CCDraggableContainer *container;
+@property (nonatomic, weak) IBOutlet CCDraggableContainer *container;
+
 @property (nonatomic, strong) NSMutableArray *dataSources;
 
 @property (weak, nonatomic) IBOutlet UIButton *disLikeButton;
@@ -25,7 +26,7 @@ CCDraggableContainerDelegate
 
 @end
 
-@implementation ViewController
+@implementation XibViewController
 
 - (IBAction)reloadDataEvent:(id)sender {
     if (self.container) {
@@ -34,26 +35,20 @@ CCDraggableContainerDelegate
 }
 
 - (IBAction)dislikeEvent:(id)sender {
-    [self.container removeFormDirection:CCDraggableDirectionLeft];
+    [self.container removeForDirection:CCDraggableDirectionLeft];
 }
 
 - (IBAction)likeEvent:(id)sender {
-    [self.container removeFormDirection:CCDraggableDirectionRight];
+    [self.container removeForDirection:CCDraggableDirectionRight];
 }
 
 - (void)loadUI {
-    
-    self.container = [[CCDraggableContainer alloc] initWithFrame:CGRectMake(0, 64, CCWidth, CCWidth) style:CCDraggableStyleUpOverlay];
-    self.container.delegate = self;
-    self.container.dataSource = self;
-    [self.view addSubview:self.container];
-    
     [self.container reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     [self loadData];
     [self loadUI];
 }
@@ -98,11 +93,11 @@ CCDraggableContainerDelegate
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer cardView:(CCDraggableCardView *)cardView didSelectIndex:(NSInteger)didSelectIndex {
     
     NSLog(@"点击了Tag为%ld的Card", (long)didSelectIndex);
-
+    
 }
 
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer finishedDraggableLastCard:(BOOL)finishedDraggableLastCard {
-   
+    
     [draggableContainer reloadData];
 }
 

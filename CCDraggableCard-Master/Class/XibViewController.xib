@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XibViewController">
+            <connections>
+                <outlet property="container" destination="gk2-rd-zvm" id="Gen-Fp-sKw"/>
+                <outlet property="detailBtn" destination="Kie-MP-iKf" id="64h-uH-cwP"/>
+                <outlet property="disLikeButton" destination="XJf-DX-922" id="gtf-2U-daa"/>
+                <outlet property="likeButton" destination="Lkf-b6-BAY" id="JIv-jM-xDc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kie-MP-iKf">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="gm7-rk-g5h"/>
+                        <constraint firstAttribute="height" constant="28" id="oTm-1X-lvj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <state key="normal" image="userInfo.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="reloadDataEvent:" destination="-1" eventType="touchUpInside" id="Ouc-8k-HcM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkf-b6-BAY">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="eUe-my-U6T"/>
+                        <constraint firstAttribute="width" constant="85" id="huN-Ym-ScB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" image="liked.png"/>
+                    <connections>
+                        <action selector="likeEvent:" destination="-1" eventType="touchUpInside" id="27T-pX-w4h"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJf-DX-922">
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="3al-bQ-sQM"/>
+                        <constraint firstAttribute="height" constant="85" id="nWg-D7-25U"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <state key="normal" image="nope.png"/>
+                    <connections>
+                        <action selector="dislikeEvent:" destination="-1" eventType="touchUpInside" id="FwG-wz-cNg"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-rd-zvm" customClass="CCDraggableContainer">
+                    <color key="backgroundColor" red="1" green="0.63051354885101318" blue="0.16725179553031921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gk2-rd-zvm" secondAttribute="height" multiplier="1:1" id="5Q6-RJ-Qrw"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nXF-lq-m3S"/>
+                        <outlet property="delegate" destination="-1" id="mTi-is-Q0g"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Kie-MP-iKf" firstAttribute="centerX" secondItem="gk2-rd-zvm" secondAttribute="centerX" id="0Hm-9D-xNl"/>
+                <constraint firstItem="Lkf-b6-BAY" firstAttribute="centerY" secondItem="Kie-MP-iKf" secondAttribute="centerY" id="K7E-91-LSD"/>
+                <constraint firstItem="gk2-rd-zvm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PGw-n8-bmX"/>
+                <constraint firstItem="Kie-MP-iKf" firstAttribute="centerY" secondItem="XJf-DX-922" secondAttribute="centerY" id="Waw-wY-Fph"/>
+                <constraint firstItem="gk2-rd-zvm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YRg-Kq-9Ii"/>
+                <constraint firstItem="Lkf-b6-BAY" firstAttribute="leading" secondItem="Kie-MP-iKf" secondAttribute="trailing" constant="39" id="e54-gi-e0W"/>
+                <constraint firstItem="Kie-MP-iKf" firstAttribute="top" secondItem="gk2-rd-zvm" secondAttribute="bottom" constant="69" id="e6G-id-h9M"/>
+                <constraint firstItem="Kie-MP-iKf" firstAttribute="leading" secondItem="XJf-DX-922" secondAttribute="trailing" constant="39" id="kH6-BW-IYR"/>
+                <constraint firstAttribute="trailing" secondItem="gk2-rd-zvm" secondAttribute="trailing" id="uwI-WW-5Ad"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="liked.png" width="85" height="85"/>
+        <image name="nope.png" width="85" height="85"/>
+        <image name="userInfo.png" width="56" height="56"/>
+    </resources>
+</document>

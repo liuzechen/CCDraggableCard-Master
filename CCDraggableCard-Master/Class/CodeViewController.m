@@ -83,7 +83,6 @@ CCDraggableContainerDelegate
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer cardView:(CCDraggableCardView *)cardView didSelectIndex:(NSInteger)didSelectIndex {
     
     NSLog(@"点击了Tag为%ld的Card", (long)didSelectIndex);
-    
 }
 
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer finishedDraggableLastCard:(BOOL)finishedDraggableLastCard {

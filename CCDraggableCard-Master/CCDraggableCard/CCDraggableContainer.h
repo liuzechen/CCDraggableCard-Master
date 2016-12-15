@@ -60,7 +60,7 @@
 @property (nonatomic) CCDraggableDirection direction;
 
 - (instancetype)initWithFrame:(CGRect)frame style:(CCDraggableStyle)style;
-- (void)removeFormDirection:(CCDraggableDirection)direction;
+- (void)removeForDirection:(CCDraggableDirection)direction;
 - (void)reloadData;
 
 @end

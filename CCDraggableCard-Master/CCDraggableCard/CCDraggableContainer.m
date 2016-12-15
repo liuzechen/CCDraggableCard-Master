@@ -30,6 +30,11 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.style = CCDraggableStyleUpOverlay;
+}
+
 // 每次执行reloadData, UI、数据进行刷新
 
 - (void)reloadData {
@@ -68,10 +73,10 @@
         NSInteger indexs = [self.dataSource numberOfIndexs];
         NSInteger preloadViewCont = indexs <= kVisibleCount ? indexs : kVisibleCount;
         
-        // -------------------------------------------------------------------------------------------------------
+        // ---------------------------------------------------
         // 在此需添加当前Card是否移动的状态A
         // 如果A为YES, 则执行当且仅当一次installNextItem, 用条件限制
-        // -------------------------------------------------------------------------------------------------------
+        // ---------------------------------------------------
 
         if (self.loadedIndex < indexs) {
             
@@ -95,7 +100,8 @@
                         self.lastCardFrame = CGRectMake(frame.origin.x,
                                                         frame.origin.y + 2 * kCardEdage,
                                                         frame.size.width,
-                                                        frame.size.height);*/
+                                                        frame.size.height);
+                         */
                     }
                 }
                 
@@ -104,10 +110,6 @@
                 
                 [self addSubview:cardView];
                 [self sendSubviewToBack:cardView]; // addSubview后添加sendSubviewToBack, 使Card的显示顺序倒置
-
-                //  -----------------
-                //  每次都会改变的
-                //  -----------------
 
                 // 添加新元素
                 [self.currentCards addObject:cardView];
@@ -210,25 +212,26 @@
     //  还原Original坐标
     //  移除最底层Card
     //  ---------------
-
+    
     if (!disappear) {
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfIndexs)]) {
-            if (self.moving && self.loadedIndex < [self.dataSource numberOfIndexs]) {
+            // 2016.12.15 修复第四个视图没有被移除的BUG，错误条件: self.loadedIndex < [indexs] 改为 （self.currentCards.count > kVisibleCount）
+            if (self.moving && self.currentCards.count > kVisibleCount) {
                 UIView *lastView = [self.currentCards lastObject];
-                self.loadedIndex = lastView.tag;
                 [lastView removeFromSuperview];
                 [self.currentCards removeObject:lastView];
+                self.loadedIndex = lastView.tag;
             }
             self.moving = NO;
             [self resetVisibleCards];
         }
     } else {
         
-        // --------------------------------
+        // -------------------------
         // 移除屏幕后
         // 1.删除移除屏幕的cardView
         // 2.重新布局剩下的cardViews
-        // --------------------------------
+        // -------------------------
         
         NSInteger flag = direction == CCDraggableDirectionLeft ? -1 : 2;
         [UIView animateWithDuration:0.5f
@@ -245,7 +248,7 @@
     }
 }
 
-- (void)removeFormDirection:(CCDraggableDirection)direction {
+- (void)removeForDirection:(CCDraggableDirection)direction {
     
     if (self.moving) {
         
@@ -283,7 +286,6 @@
             
             [self installNextItem];
             [self resetVisibleCards];
-            
         }];
     }
 }
@@ -357,7 +359,6 @@
     
     //  ---------------------------------------------------------
     //  self.delegate所触发方法, 委托对象用来改变一些UI的缩放、透明度等...
-    //  此处用于还原
     //  ---------------------------------------------------------
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(draggableContainer:draggableDirection:widthRatio:heightRatio:)]) {

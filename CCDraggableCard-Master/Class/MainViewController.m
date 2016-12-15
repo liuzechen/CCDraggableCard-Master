@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "CodeViewController.h"
+#import "XibViewController.h"
 
 @interface MainViewController ()
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.contents = @[@"Code", @"Xib(完整中)"];
+    self.contents = @[@"Code"]; // , @"Xib"
     self.tableView.tableFooterView = [UIView new];
 }
 
@@ -43,6 +44,9 @@
     if (!indexPath.row) {
         CodeViewController *codeVc = [[CodeViewController alloc] init];
         [self.navigationController pushViewController:codeVc animated:YES];
+    } else {
+        // XibViewController *xibVc = [[XibViewController alloc] initWithNibName:@"XibViewController" bundle:nil];
+        // [self.navigationController pushViewController:xibVc animated:YES];
     }
 }
 

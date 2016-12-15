@@ -28,10 +28,11 @@
 		C547640F1D2CA13100736B09 /* CCDraggableCard_MasterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C547640E1D2CA13100736B09 /* CCDraggableCard_MasterUITests.m */; };
 		C54764251D2CADD500736B09 /* CCDraggableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = C54764241D2CADD500736B09 /* CCDraggableContainer.m */; };
 		C55A227B1DE7DDB500446E06 /* CustomCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A22781DE7DDB500446E06 /* CustomCardView.m */; };
-		C55A227C1DE7DDB500446E06 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A227A1DE7DDB500446E06 /* ViewController.m */; };
 		C55A227F1DE7DEC800446E06 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A227E1DE7DEC800446E06 /* MainViewController.m */; };
 		C55A22821DE7E11000446E06 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A22811DE7E11000446E06 /* CodeViewController.m */; };
 		C55C9F701D2CDE910014447A /* CCDraggableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55C9F6F1D2CDE910014447A /* CCDraggableCardView.m */; };
+		C57B7F941E02366D00372A07 /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C57B7F921E02366D00372A07 /* XibViewController.m */; };
+		C57B7F951E02366D00372A07 /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C57B7F931E02366D00372A07 /* XibViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +83,6 @@
 		C54764241D2CADD500736B09 /* CCDraggableContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDraggableContainer.m; sourceTree = "<group>"; };
 		C55A22771DE7DDB500446E06 /* CustomCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCardView.h; sourceTree = "<group>"; };
 		C55A22781DE7DDB500446E06 /* CustomCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCardView.m; sourceTree = "<group>"; };
-		C55A22791DE7DDB500446E06 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C55A227A1DE7DDB500446E06 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C55A227D1DE7DEC800446E06 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C55A227E1DE7DEC800446E06 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C55A22801DE7E11000446E06 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
@@ -91,6 +90,9 @@
 		C55C9F6E1D2CDE910014447A /* CCDraggableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCDraggableCardView.h; sourceTree = "<group>"; };
 		C55C9F6F1D2CDE910014447A /* CCDraggableCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCDraggableCardView.m; sourceTree = "<group>"; };
 		C55C9F721D2CEBF60014447A /* CCDraggableConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCDraggableConfig.h; sourceTree = "<group>"; };
+		C57B7F911E02366D00372A07 /* XibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XibViewController.h; sourceTree = "<group>"; };
+		C57B7F921E02366D00372A07 /* XibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XibViewController.m; sourceTree = "<group>"; };
+		C57B7F931E02366D00372A07 /* XibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XibViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,8 +200,9 @@
 			children = (
 				C55A22771DE7DDB500446E06 /* CustomCardView.h */,
 				C55A22781DE7DDB500446E06 /* CustomCardView.m */,
-				C55A22791DE7DDB500446E06 /* ViewController.h */,
-				C55A227A1DE7DDB500446E06 /* ViewController.m */,
+				C57B7F911E02366D00372A07 /* XibViewController.h */,
+				C57B7F921E02366D00372A07 /* XibViewController.m */,
+				C57B7F931E02366D00372A07 /* XibViewController.xib */,
 				C55A227D1DE7DEC800446E06 /* MainViewController.h */,
 				C55A227E1DE7DEC800446E06 /* MainViewController.m */,
 				C55A22801DE7E11000446E06 /* CodeViewController.h */,
@@ -289,7 +292,7 @@
 		C54763DE1D2CA13100736B09 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Zechen Liu";
 				TargetAttributes = {
 					C54763E51D2CA13100736B09 = {
@@ -346,6 +349,7 @@
 				C54763F41D2CA13100736B09 /* Main.storyboard in Resources */,
 				C539A4E01D30DD41005E0701 /* image_5.jpg in Resources */,
 				C539A4DF1D30DD41005E0701 /* image_4.jpg in Resources */,
+				C57B7F951E02366D00372A07 /* XibViewController.xib in Resources */,
 				C539A4DE1D30DD41005E0701 /* image_3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C55A227C1DE7DDB500446E06 /* ViewController.m in Sources */,
 				C55A22821DE7E11000446E06 /* CodeViewController.m in Sources */,
 				C54764251D2CADD500736B09 /* CCDraggableContainer.m in Sources */,
 				C54763EE1D2CA13100736B09 /* AppDelegate.m in Sources */,
@@ -379,6 +382,7 @@
 				C55A227F1DE7DEC800446E06 /* MainViewController.m in Sources */,
 				C55A227B1DE7DDB500446E06 /* CustomCardView.m in Sources */,
 				C55C9F701D2CDE910014447A /* CCDraggableCardView.m in Sources */,
+				C57B7F941E02366D00372A07 /* XibViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,8 +451,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -492,8 +498,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -525,7 +533,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X4U9VCM9CZ;
 				INFOPLIST_FILE = "CCDraggableCard-Master/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,7 +549,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X4U9VCM9CZ;
 				INFOPLIST_FILE = "CCDraggableCard-Master/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liuzechen.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -29,12 +29,11 @@ typedef NS_OPTIONS(NSInteger, CCDraggableStyle) {
 static const CGFloat kBoundaryRatio   = 0.8f;
 static const CGFloat kSecondCardScale = 0.95f;
 static const CGFloat kTherdCardScale  = 0.9f;
-//static const CGFloat kFirstCardScale  = 1.08f;
-//static const CGFloat kSecondCardScale = 1.04f;
 
 static const CGFloat kCardEdage        = 15.0f;
 static const CGFloat kContainerEdage   = 15.0f;
 static const CGFloat kNavigationHeight = 64.0f;
+
 static const CGFloat kVisibleCount     = 3;
 
 #endif /* CCDraggableConfig_h */
