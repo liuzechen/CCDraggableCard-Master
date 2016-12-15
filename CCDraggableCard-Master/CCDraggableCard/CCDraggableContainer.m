@@ -66,7 +66,6 @@
 - (void)installNextItem {
     
     // 最多只显示3个
-
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfIndexs)] && [self.dataSource respondsToSelector:@selector(draggableContainer:viewForIndex:)]) {
         
         NSInteger indexs = [self.dataSource numberOfIndexs];
@@ -359,10 +358,7 @@
 
 - (void)originalLayout {
     
-    /*
-    self.delegate所触发方法, 委托对象用来改变一些UI的缩放、透明度等...
-    */
-
+    // self.delegate所触发方法, 委托对象用来改变一些UI的缩放、透明度等...
     if (self.delegate && [self.delegate respondsToSelector:@selector(draggableContainer:draggableDirection:widthRatio:heightRatio:)]) {
         [self.delegate draggableContainer:self draggableDirection:self.direction widthRatio:0 heightRatio:0];
     }
@@ -407,6 +403,7 @@
         
         cardView.originalTransform = cardView.transform;
     }
+    
 }
 
 @end

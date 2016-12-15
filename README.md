@@ -3,6 +3,7 @@
 ![image](https://github.com/liuzechen/CCDraggableCard-Master/raw/master/screenshot.gif)
 
 `CCDraggableCard`是左滑无感|右滑喜欢的卡牌视图。作者会不间断更新，如`CCDraggableCard`有幸被您搜到，请Star予以支持(^__^) ……
+`目前仅支持代码创建自定义CardView, Xib创建正在完善`
 
 #### 使用
 
