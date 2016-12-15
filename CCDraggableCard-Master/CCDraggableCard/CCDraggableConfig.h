@@ -9,9 +9,10 @@
 #ifndef CCDraggableConfig_h
 #define CCDraggableConfig_h
 
-//  -------------------------------------------------
-//  MARK: 拽到方向枚举
-//  -------------------------------------------------
+
+/**
+ 拽到方向枚举
+ */
 typedef NS_OPTIONS(NSInteger, CCDraggableDirection) {
     CCDraggableDirectionDefault     = 0,
     CCDraggableDirectionLeft        = 1 << 0,

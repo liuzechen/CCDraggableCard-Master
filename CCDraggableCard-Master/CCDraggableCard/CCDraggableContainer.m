@@ -36,7 +36,6 @@
 }
 
 // 每次执行reloadData, UI、数据进行刷新
-
 - (void)reloadData {
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self defaultConfig];
@@ -73,10 +72,10 @@
         NSInteger indexs = [self.dataSource numberOfIndexs];
         NSInteger preloadViewCont = indexs <= kVisibleCount ? indexs : kVisibleCount;
         
-        // ---------------------------------------------------
-        // 在此需添加当前Card是否移动的状态A
-        // 如果A为YES, 则执行当且仅当一次installNextItem, 用条件限制
-        // ---------------------------------------------------
+        /*
+        在此需添加当前Card是否移动的状态A
+        如果A为YES, 则执行当且仅当一次installNextItem, 用条件限制
+        */
 
         if (self.loadedIndex < indexs) {
             
@@ -165,10 +164,11 @@
     
         if (self.delegate && [self.delegate respondsToSelector:@selector(draggableContainer:draggableDirection:widthRatio:heightRatio:)]) {
     
-            //  ---------------------------------------------------------------------------------------------
-            //  做比例, 总长度(0 ~ self.cardCenter.x), 已知滑动的长度 (gesture.view.center.x - self.cardCenter.x)
-            //  ratio用来判断是否显示图片中的"Like"或"DisLike"状态, 用开发者限定多少比例显示或设置透明度
-            //  ---------------------------------------------------------------------------------------------
+            
+            /*
+            做比例, 总长度(0 ~ self.cardCenter.x), 已知滑动的长度 (gesture.view.center.x - self.cardCenter.x)
+            ratio用来判断是否显示图片中的"Like"或"DisLike"状态, 用开发者限定多少比例显示或设置透明度
+            */
 
             float widthRatio = (gesture.view.center.x - self.cardCenter.x) / self.cardCenter.x;
             float heightRatio = (gesture.view.center.y - self.cardCenter.y) / self.cardCenter.y;
@@ -176,9 +176,9 @@
             // Moving
             [self judgeMovingState: widthRatio];
             
-            //  ----------------------------------------
-            //  左右的判断方法为: 只要 ratio_w > 0 就是Right
-            //  ----------------------------------------
+            /*
+            左右的判断方法为: 只要 ratio_w > 0 就是Right
+            */
             
             if (widthRatio > 0) {
                 self.direction = CCDraggableDirectionRight;
@@ -194,9 +194,9 @@
     if (gesture.state == UIGestureRecognizerStateEnded ||
         gesture.state == UIGestureRecognizerStateCancelled) {
         
-        //  --------------------
-        //  随着滑动的方向消失或还原
-        //  --------------------
+        /*  --------------------
+        随着滑动的方向消失或还原
+        */
 
         float widthRatio = (gesture.view.center.x - self.cardCenter.x) / self.cardCenter.x;
         float moveWidth  = (gesture.view.center.x  - self.cardCenter.x);
@@ -208,10 +208,10 @@
 
 - (void)finishedPanGesture:(UIView *)cardView direction:(CCDraggableDirection)direction scale:(CGFloat)scale disappear:(BOOL)disappear {
     
-    //  ---------------
-    //  还原Original坐标
-    //  移除最底层Card
-    //  ---------------
+    /*
+    1.还原Original坐标
+    2.移除最底层Card
+    */
     
     if (!disappear) {
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfIndexs)]) {
@@ -227,11 +227,11 @@
         }
     } else {
         
-        // -------------------------
-        // 移除屏幕后
-        // 1.删除移除屏幕的cardView
-        // 2.重新布局剩下的cardViews
-        // -------------------------
+        /*
+        移除屏幕后
+        1.删除移除屏幕的cardView
+        2.重新布局剩下的cardViews
+        */
         
         NSInteger flag = direction == CCDraggableDirectionLeft ? -1 : 2;
         [UIView animateWithDuration:0.5f
@@ -304,10 +304,12 @@
                          [weakself originalLayout];
                      } completion:^(BOOL finished) {
                          
-                         // 2016-12-08
-                         // 当且仅当动画结束调用，之前错误写在originalLayout方法中，要知道originalLayout方法经常活动在动画里
-                         // ...写在originalLayout里会出现CardView里面的子视图出现动画效果
-                         // 用户移除最后一个CardView除非的方法
+                         /*
+                         2016-12-08
+                         当且仅当动画结束调用，之前错误写在originalLayout方法中，要知道originalLayout方法经常活动在动画里
+                         ...写在originalLayout里会出现CardView里面的子视图出现动画效果
+                         用户移除最后一个CardView除非的方法
+                         */
                          
                          if (weakself.delegate && [weakself.delegate respondsToSelector:@selector(draggableContainer:finishedDraggableLastCard:)]) {
                              if (weakself.currentCards.count == 0) {
@@ -357,9 +359,9 @@
 
 - (void)originalLayout {
     
-    //  ---------------------------------------------------------
-    //  self.delegate所触发方法, 委托对象用来改变一些UI的缩放、透明度等...
-    //  ---------------------------------------------------------
+    /*
+    self.delegate所触发方法, 委托对象用来改变一些UI的缩放、透明度等...
+    */
 
     if (self.delegate && [self.delegate respondsToSelector:@selector(draggableContainer:draggableDirection:widthRatio:heightRatio:)]) {
         [self.delegate draggableContainer:self draggableDirection:self.direction widthRatio:0 heightRatio:0];

@@ -13,10 +13,10 @@
 
 @class CCDraggableContainer;
 
-//  -------------------------------------------------
-//  MARK: Delegate
-//  -------------------------------------------------
 
+/**
+ Delegate
+ */
 @protocol CCDraggableContainerDelegate <NSObject>
 
 - (void)draggableContainer:(CCDraggableContainer *)draggableContainer
@@ -33,10 +33,9 @@
 
 @end
 
-//  -------------------------------------------------
-//  MARK: DataSource
-//  -------------------------------------------------
-
+/**
+ DataSource
+ */
 @protocol CCDraggableContainerDataSource <NSObject>
 
 @required
@@ -47,10 +46,9 @@
 
 @end
 
-//  -------------------------------------------------
-//  MARK: CCDraggableContainer
-//  -------------------------------------------------
-
+/**
+ CCDraggableContainer
+ */
 @interface CCDraggableContainer : UIView
 
 @property (nonatomic, weak) IBOutlet id <CCDraggableContainerDelegate>delegate;
