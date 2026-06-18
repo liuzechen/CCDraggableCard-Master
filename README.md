@@ -49,7 +49,7 @@ self.container.dataSource = self;
 
 
 #### 联系作者 
-1040981145@qq.com
+10***1100@qq.com
 
 #### 链接
 > 1.🌟星光闪烁特效:https://github.com/liuzechen/CC_Twinkle
