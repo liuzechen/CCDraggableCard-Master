@@ -49,7 +49,8 @@ self.container.dataSource = self;
 
 
 #### 联系作者 
-10***1100@qq.com
+抖音: 审了个美(slgmoon)
+
 
 #### 链接
 > 1.🌟星光闪烁特效:https://github.com/liuzechen/CC_Twinkle
